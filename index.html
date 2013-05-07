@@ -1,0 +1,75 @@
+<!doctype html>
+<html ng-app>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title></title>
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body ng-controller="AddressBookCtrl">
+  	
+  	<div id="container">
+
+		<h1>Contacts</h1>
+
+		<p>A simple contact form powered by angular.js.</p>
+
+		<div class="contacts">
+			
+			<div class="header-container">
+				<div class="header-title">First</div>
+				<div class="header-title">Last</div>
+				<div class="header-title">Phone</div>
+				<div class="header-title">Email</div>
+			</div>
+
+			<div class="contacts-body" ng-repeat="contact in contacts">
+				<div class="contacts-first">{{contact.firstName}}</div>
+				<div class="contacts-last">{{contact.lastName}}</div>
+				<div class="contacts-phone">{{contact.phoneNumber}}</div>
+				<div class="contacts-email">{{contact.emailAddress}}</div>
+			</div>
+
+		</div>
+
+		<div class="add-contact">
+			
+			<form ng-submit="addContact()">
+				<ul class="add-fields">
+					<li>
+						Add Contact:
+					</li>
+
+					<li>
+						<input type="text" ng-model="firstName" placeholder="First Name"></input>
+					</li>
+
+					<li>
+						<input type="text" ng-model="lastName" placeholder="Last Name"></input>
+					</li>
+
+					<li>
+						<input type="text" ng-model="phoneNumber" placeholder="Phone Number"></input>
+					</li>
+
+					<li>
+						<input type="text" ng-model="emailAddress" placeholder="Email Address"></input>
+					</li>
+
+					<li>
+						<input type="submit"></input>
+					</li>
+				</ul>
+			</form>
+ 
+		</div>
+
+	</div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js"></script>
+        <script src="js/main.js"></script>
+
+    </body>
+</html>
